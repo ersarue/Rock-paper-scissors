@@ -20,8 +20,9 @@ function play(e) {
 }
 
 //event listener
+let touchEvent = 'ontouchstart' in window ? 'touchstart' : 'click';
 choices.forEach(choice => choice.addEventListener('click', play));
-window.addEventListener('click', clearModal);
+window.addEventListener(touchEvent, clearModal);
 restart.addEventListener('click', restartGame);
 
 //computer choice
